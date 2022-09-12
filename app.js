@@ -34,7 +34,10 @@ const checkDotHandler = (word) => {
 
     countBox.classList.add('active')
     errText.classList.remove('active')
-    countdotText.innerHTML = dotArabicCounter !== 0 ? dotArabicCounter + "تا" : "هیچی!"
+    countdotText.innerHTML =
+        dotArabicCounter > 1 ? `${dotArabicCounter} تا` :
+            dotArabicCounter === 1 ? " یکی" :
+                "هیچی!"
 }
 
 const counterDot = (word, dotCount) => {
